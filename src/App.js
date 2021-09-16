@@ -1,24 +1,20 @@
-import logo from './logo.svg';
+import { PageContainer } from './components/PageContainer/PageContainer';
+import { Button } from './components/Button/Button';
+import { PalettePicker } from './components/PalettePicker/PalettePicker';
+import { FaAddressBook } from 'react-icons/fa';
+import { ThemeProvider } from './context/theme';
+
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider>
+    <PageContainer>
+      <Button icon={FaAddressBook}>Super button</Button>
+      <PalettePicker />
+      </PageContainer>
+      </ThemeProvider>
   );
 }
 
